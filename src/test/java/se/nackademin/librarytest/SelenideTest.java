@@ -60,7 +60,6 @@ public class SelenideTest extends TestBase {
         addAuthorPage.setLastNameField(lastName);
         addAuthorPage.setBiographyField(biography);
         addAuthorPage.setCountryField(country);
-        sleep(8000);
         addAuthorPage.clickAddAuthorButton();
         page(MenuPage.class).navigateToBrowseAuthors();
         BrowseAuthorsPage browseAuthorsPage = page(BrowseAuthorsPage.class);
@@ -71,7 +70,8 @@ public class SelenideTest extends TestBase {
         table.searchAndClick(fullName, 0);
         AuthorPage authorPage = page(AuthorPage.class);
         assertEquals("The author " + fullName + " should have been visible on the page.", fullName, authorPage.getName());
-        sleep(8000);
+        assertEquals("The country of the author " + fullName + ":" + country + " should have been visible on the page.", country, authorPage.getCountry());
+        assertEquals("The biography of the author " + fullName + ":" + biography + " should have been visible on the page.", biography, authorPage.getBiography());
     }
 
     @Test
