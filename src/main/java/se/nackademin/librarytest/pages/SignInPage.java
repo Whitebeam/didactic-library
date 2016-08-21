@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * @author testautomatisering
  */
+
 public class SignInPage extends MenuPage {
     @FindBy(css = "#input-username")
     SelenideElement userNameField;
@@ -20,14 +21,15 @@ public class SignInPage extends MenuPage {
     SelenideElement logInButton;
 
     public void setUsername(String username) {
-        userNameField.clear();
-        userNameField.sendKeys(username);
-
+//        userNameField.clear();
+        setTextFieldValue("user name field", username, userNameField);
+        //userNameField.sendKeys(username);        
     }
 
     public void setPassword(String password) {
-        passwordField.clear();
-        passwordField.sendKeys(password);
+//        passwordField.clear();
+        setTextFieldValue("password field", password, passwordField);
+//        passwordField.sendKeys(password);
     }
 
     public void clickLogIn() {

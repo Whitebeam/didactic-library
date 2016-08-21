@@ -32,6 +32,10 @@ public class UserHelper {
         signInPage.setUsername(username);
         signInPage.setPassword(password);
         signInPage.clickLogIn();
-
+    }
+    
+    public static void logOut() {
+        MenuPage menuPage = page(MenuPage.class);
+        menuPage.navigateToSignOut();
     }
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * @author Whitebeam
  */
-public class AddUserPage extends MenuPage {
+public class EditUserPage extends MenuPage {
 
     @FindBy(css = "#gwt-uid-3")
     SelenideElement userNameField;
@@ -19,8 +19,8 @@ public class AddUserPage extends MenuPage {
     SelenideElement passwordField;
     @FindBy(css = "#gwt-uid-13")
     SelenideElement emailField;
-    @FindBy(css = "#add-user-button")
-    SelenideElement addUserButton;
+    @FindBy(css = "#save-user-button")
+    SelenideElement saveUserButton;
 
     public void setUsername(String username) {
         setTextFieldValue("user name field", username, userNameField);
@@ -28,6 +28,10 @@ public class AddUserPage extends MenuPage {
 
     public void setPassword(String password) {
         setTextFieldValue("password field", password, passwordField);
+    }
+    
+    public void clearPasswordField() {
+        setTextFieldValue("clear password field", "", passwordField);
     }
 
     public void setEmail(String email) {
@@ -40,7 +44,7 @@ public class AddUserPage extends MenuPage {
     public void setPhoneNumber
     */
 
-    public void clickAddUserButton() {
-        clickButton("add user button", addUserButton);
+    public void clickSaveUserButton() {
+        clickButton("save user button", saveUserButton);
     }
 }
