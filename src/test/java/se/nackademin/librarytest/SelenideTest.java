@@ -199,6 +199,7 @@ public class SelenideTest extends TestBase {
     //Verifiera att det nu finns en bok mindre tillgänglig:
         bookPage = page(BookPage.class);
         try {
+            Thread.sleep(500); //Behövs visst för att sidan ska hinna laddas.
             assertEquals("Available book copies isn't one less after borrowing.", initialAvailableCopies - 1, Integer.parseInt(bookPage.getAvailableCopies()));
         } catch (Exception e) {
             fail("testBorrowingABook: The number of copies field content coun't be converted to integer.");
